@@ -1,0 +1,154 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.other-page {
+  color: #002B4F;
+
+
+  @media (min-width: $breakpoint-md) {
+    padding: 170px 0;
+
+  }
+
+  @media (max-width: $breakpoint-md) {
+    text-align: center;
+    padding: 90px 0 60px 0;
+
+  }
+
+  &__title {
+    @include fontSize(30, 50);
+
+    @media (min-width: $breakpoint-md) {
+      margin-bottom: 12px;
+    }
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__icon {
+    @media (min-width: $breakpoint-md) {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -110px;
+      width: 82px;
+      height: 82px;
+    }
+    @media (max-width: $breakpoint-md) {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 16px auto;
+    }
+
+    & img {
+      height: 100%;
+      object-fit: contain;
+      position: relative;
+      z-index: 2;
+    }
+
+    &:after {
+      content: '';
+      width: 270px;
+      height: 270px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #F6F6F6;
+      border-radius: 100%;
+      z-index: 1;
+
+      @media (min-width: $breakpoint-md) {
+        width: 270px;
+        height: 270px;
+      }
+      @media (max-width: $breakpoint-md) {
+        width: 134px;
+        height: 134px;
+      }
+    }
+  }
+
+  &__number {
+    color: #002B4F;
+    @include fontSize(54, 106);
+    line-height: 1;
+    display: block;
+    @media (min-width: $breakpoint-lg) {
+      margin-bottom: 20px;
+    }
+    @media (max-width: $breakpoint-lg) {
+      margin-bottom: 16px;
+    }
+
+  }
+
+  &__description {
+    @include fontSize(10, 16);
+    line-height: 1.7;
+
+    & b {
+      font-weight: bold;
+      text-transform: uppercase;
+      width: 100%;
+      display: block;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      margin-bottom: 19px;
+    }
+    @media (max-width: $breakpoint-lg) {
+      margin-bottom: 26px;
+    }
+  }
+
+  &__btn {
+    min-width: 145px;
+  }
+}
+
+
+.search-result {
+  position: relative;
+  @media (max-width: $breakpoint-lg) {
+    min-height: 100vh;
+  }
+
+  &__icon {
+    display: block;
+    position: relative;
+    margin: 70px 0 140px 0;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 240px;
+      width: 240px;
+      border-radius: 100%;
+
+      background: rgba(0, 43, 79, 0.04);
+    }
+  }
+
+  & img {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 15px auto;
+  }
+
+  & figcaption {
+    font-weight: bold;
+    font-size: 23px;
+    line-height: 29px;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    color: #DCE3E7;
+  }
+
+
+}

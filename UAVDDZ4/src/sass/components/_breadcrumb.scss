@@ -1,0 +1,124 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.gpb_breadcrumbs {
+  // text-decoration: none;
+  //font-size: 0;
+
+  &__wrap {
+    // margin-bottom: 14px;
+    @media(max-width: $breakpoint-md) {
+      // margin-bottom: 10px;
+    }
+  }
+
+  & a, span, & .breadcrumb_last {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  & a {
+    @include transition(.3);
+    position: relative;
+    padding: 0 16px 0 0;
+    color: $whiteColor;
+
+    &:hover {
+      color: $accentColor;
+    }
+
+    &:after {
+      content: '';
+      height: 4px;
+      width: 4px;
+      background: $whiteColor;
+      border-radius: 100%;
+
+      position: absolute;
+      top: 50%;
+      right: 4px;
+      transform: translateY(-50%);
+    }
+  }
+
+  .breadcrumb_last, .kb_title {
+    padding: 0;
+    color: $whiteColor;
+    font-weight: 700;
+  }
+}
+
+
+/*new*/
+.kama_breadcrumbs {
+  @media(min-width: $breakpoint-md) {
+    margin-bottom: 14px;
+  }
+  @media(max-width: $breakpoint-md) {
+    margin-bottom: 10px;
+  }
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: $whiteColor;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  & a {
+    color: $whiteColor;
+    font-weight: 300;
+  }
+
+  & .kb {
+    &_sep {
+      height: 4px;
+      width: 4px;
+      background: $whiteColor;
+      border-radius: 100%;
+      display: inline-block;
+      margin: 0 8px;
+      color: transparent;
+    }
+
+    &_title {
+      color: $whiteColor;
+      font-weight: 700;
+    }
+  }
+}
+
+.main-white {
+  .kama_breadcrumbs {
+    color: $primaryColor;
+    @media (max-width: $breakpoint-md) {
+      margin: 25px 0 17px 0;
+    }
+    @media (min-width: $breakpoint-md) {
+      margin: 37px 0;
+    }
+
+    & a {
+      color: $primaryColor;
+    }
+
+    & .kb {
+      &_sep {
+        background:  $primaryColor;
+      }
+      &_title {
+        color:  $primaryColor;
+      }
+    }
+  }
+}

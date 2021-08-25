@@ -1,0 +1,144 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.contacts {
+  @media (min-width: $breakpoint-md) {
+    padding: 48px 0 62px 0;
+  }
+  @media (max-width: $breakpoint-md) {
+    padding: 20px 0 0 0;
+  }
+
+  &-map {
+    height: 244px;
+    width: 100%;
+    @media (min-width: $breakpoint-md) {
+      margin-bottom: 63px;
+      height: 244px;
+    }
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 32px;
+      height: 144px;
+    }
+  }
+
+  &-item {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    grid-column-gap: 17px;
+
+    @media (min-width: $breakpoint-md) {
+      padding-bottom: 65px;
+      width: 80%;
+    }
+    @media (max-width: $breakpoint-md) {
+      padding-bottom: 47px;
+      width: 100%;
+    }
+
+
+    &__icon {
+      & i {
+        font-size: 22px;
+        color: $accentColor;
+      }
+    }
+
+    &__title {
+      font-weight: 800;
+      font-size: 14px;
+      @include fontSize(12, 14);
+      line-height: 1.4;
+
+      @media (min-width: $breakpoint-md) {
+        margin-bottom: 15px;
+      }
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  &-list {
+    & li, & a {
+      @include fontSize(10, 16);
+      line-height: 1.375;
+      letter-spacing: 0.02em;
+      color: #002B4F;
+    }
+
+    & li {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.partner-block {
+  background: #F6F6F6;
+  padding: 31px 28px 16px 28px;
+
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 27px;
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+
+
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr 103px;
+    }
+  }
+
+  &__title {
+    @include fontSize(12, 16);
+  }
+
+  &__subtitle {
+    @include fontSize(10, 12);
+    line-height: 1.7;
+    color: #B7B7B7;
+  }
+
+  &__figure {
+    width: 100%;
+
+    @media (min-width: $breakpoint-md) {
+      max-width: 150px;
+    }
+    @media (max-width: $breakpoint-md) {
+      max-width: 103px;
+    }
+  }
+}
+
+.our-contacts {
+  .contacts {
+    &-item {
+
+      & + .contacts-item {
+        &:before {
+          content: '';
+          width: 100%;
+          height: 1px;
+          position: absolute;
+          left: 0;
+          background: $primaryColor;
+          @media (min-width: $breakpoint-md) {
+            top: -32px;
+          }
+          @media (max-width: $breakpoint-md) {
+            top: -23px;
+          }
+
+        }
+      }
+    }
+  }
+}

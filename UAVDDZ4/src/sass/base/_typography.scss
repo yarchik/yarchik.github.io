@@ -1,0 +1,76 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.text {
+  &-right {
+    text-align: right;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: left;
+  }
+}
+
+.font-weight {
+  &__bold {
+    font-weight: 700;
+  }
+}
+
+.--uppercase {
+  text-transform: uppercase;
+}
+
+
+.icon {
+  &-time:before {
+    content: "\e90d";
+  }
+  &-add:before {
+    content: "\e901";
+  }
+  &-search:before {
+    content: "\e90a";
+  }
+  &-arRight:before {
+    content: "\e900";
+  }
+  &-close:before {
+    content: "\e901";
+  }
+  &-document:before {
+    content: "\e902";
+  }
+  &-envelope:before {
+    content: "\e903";
+  }
+  &-location:before {
+    content: "\e904";
+  }
+  &-message:before {
+    content: "\e905";
+  }
+  &-phone:before {
+    content: "\e906";
+  }
+  &-phone-call:before {
+    content: "\e907";
+  }
+  &-phone-contact:before {
+    content: "\e908";
+  }
+  &-placeholder:before {
+    content: "\e909";
+  }
+  &-send:before {
+    content: "\e90b";
+  }
+  &-user:before {
+    content: "\e90c";
+  }
+
+}

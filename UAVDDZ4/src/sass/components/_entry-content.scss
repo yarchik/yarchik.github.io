@@ -1,0 +1,174 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.entry-content {
+  font-family: 'Mont', sans-serif;
+  font-weight: normal;
+
+  & p {
+    font-weight: normal;
+    @include fontSize(12, 16);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  & h2, & h3, & h4, & h5, & h6 {
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  & h2 {
+    @include fontSize(20, 24);
+    line-height: 1.5;
+  }
+
+  & h3 {
+    font-size: 30px;
+    line-height: 47px;
+    margin-bottom: 8px;
+  }
+
+  & h4 {
+    @include fontSize(16, 18);
+    line-height: 1.444;
+  }
+
+  & h5 {
+    @include fontSize(14, 16);
+  }
+
+  & h6 {
+    @include fontSize(12, 14);
+  }
+
+  h4, h5, h6 {
+    margin-bottom: 24px;
+  }
+
+  & a {
+    color: $accentColor;
+    font-weight: bold;
+    text-decoration: underline;
+    position: relative;
+  }
+
+  & .aligncenter {
+    margin: 0 auto;
+  }
+
+  & .wp-block-image {
+
+    margin-bottom: 24px;
+
+    & img {
+
+      border-radius: 2px;
+      overflow: hidden;
+      width: 100%;
+      object-fit: cover;
+
+      @media (min-width: $breakpoint-lg) {
+        height: 400px;
+      }
+      @media (max-width: $breakpoint-lg) {
+
+        height: 308px;
+      }
+    }
+
+    & figcaption {
+      margin: 5px 0 15px 0;
+    }
+  }
+
+
+  & ul, & ol {
+    margin-bottom: 20px;
+
+    & li {
+      font-weight: normal;
+      @include fontSize(12, 16);
+      line-height: 1.25;
+      letter-spacing: 0.02em;
+      position: relative;
+      padding-left: 15px;
+      margin-bottom: 12px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+
+      }
+    }
+  }
+
+  & ul {
+    & li {
+      &:before {
+        content: "";
+
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        background: $blackColor;
+      }
+    }
+  }
+
+  & ol {
+    & li {
+      counter-increment: list;
+
+      &:before {
+        content: counter(list) ".";
+        width: 12px;
+        color: $blackColor;
+        font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1900 - 300)));
+        font-weight: 400;
+      }
+    }
+  }
+
+  & blockquote {
+    padding: 60px 0 0 0px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    @media (max-width: $breakpoint-lg) {
+      padding: 60px 0 0 0;
+      width: 100%;
+    }
+
+    &, & p {
+      font-size: 18px;
+      line-height: 23px;
+      font-weight: 400;
+    }
+
+    &:before {
+      content: '';
+      width: 78px;
+      height: 78px;
+      background: url("../img/quote.svg") center center no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%);
+      z-index: -1;
+      @media (max-width: $breakpoint-lg) {
+        content: '';
+        width: 55px;
+        height: 55px;
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  outline: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-overflow-scrolling: touch;
+
+  & .contacts-form__description {
+    @media (min-width: $breakpoint-md) {
+      width: 80%;
+      margin: 0 auto 30px auto;
+    }
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 15px;
+    }
+  }
+
+  & .btn {
+    margin-top: 21px;
+  }
+
+  &-body {
+    position: absolute;
+    display: flex;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: hidden;
+  }
+
+  &-content {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    background: #F6F6F6;
+
+    @media (min-width: $breakpoint-md) {
+      max-width: 600px;
+      padding: 74px 58px 55px 58px;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      max-width: 290px;
+      padding: 56px 20px 36px 20px;
+    }
+
+    &__close {
+      position: absolute;
+      right: 22px;
+      top: 22px;
+      height: 22px;
+      width: 22px;
+
+      & i {
+        font-size: 22px;
+        color: $primaryColor;
+        @include transition(.3);
+      }
+
+      &:hover {
+        & i {
+          color: $accentColor;
+        }
+      }
+
+      @media (max-width: $breakpoint-md) {
+        right: 15px;
+        top: 15px;
+      }
+    }
+  }
+}
+

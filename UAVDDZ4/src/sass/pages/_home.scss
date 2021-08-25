@@ -1,0 +1,356 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+.advantages-item {
+  display: grid;
+  grid-template-columns: 63px 1fr;
+  grid-column-gap: 30px;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 63px 1fr;
+    grid-column-gap: 30px;
+  }
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 57px 1fr;
+    grid-column-gap: 20px;
+  }
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: 11px;
+  }
+
+  &__text, &__title {
+    @include fontSize(12, 14);
+  }
+
+  &__icon {
+
+    background: $whiteColor;
+    border: 1px solid $primaryColor;
+    border-radius: 100%;
+
+
+    @media (min-width: $breakpoint-md) {
+      width: 63px;
+      height: 63px;
+    }
+    @media (max-width: $breakpoint-md) {
+      width: 57px;
+      height: 57px;
+    }
+
+    & img {
+      object-fit: cover;
+
+      @media (min-width: $breakpoint-md) {
+        width: 20px;
+        height: 20px;
+      }
+      @media (max-width: $breakpoint-md) {
+        width: 17px;
+        height: 17px;
+      }
+    }
+
+
+  }
+
+  &__wrap {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 34px;
+    }
+  }
+}
+
+.primary-screen {
+  display: grid;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0;
+    row-gap: 0;
+  }
+  @media (max-width: $breakpoint-md) {
+    margin-top: 118px;
+
+  }
+
+  &, &__content, &__icon {
+    @media (min-width: $breakpoint-md) {
+      height: 100vh;
+    }
+    @media (max-width: $breakpoint-md) {
+      height: auto;
+    }
+  }
+
+  &__content {
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: #003352 url("../img/mainBg.png") left center no-repeat;
+      background-size: cover;
+      z-index: -1;
+
+      @media (min-width: $breakpoint-lg) {
+        width: 50%;
+
+      }
+      @media (max-width: $breakpoint-lg) {
+        width: 100%;
+      }
+
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      max-width: calc(660px - 16px - 8%);
+      margin-right: 8%;
+      margin-left: auto;
+      padding-left: 16px;
+
+    }
+    @media (max-width: $breakpoint-lg) {
+      padding: 60px 16px;
+      position: relative;
+    }
+  }
+
+  &__icon {
+    @media (max-width: $breakpoint-md) {
+      height: 167px;
+    }
+  }
+
+  &__sub-title, &__title {
+    margin-bottom: 15px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__sub-title {
+    @include fontSize(12, 14);
+    line-height: 1.4;
+    color: #FED234;
+    @media (max-width: $breakpoint-md) {
+
+    }
+  }
+
+  &__title {
+    letter-spacing: 0.03em;
+    color: $whiteColor;
+    @include fontSize(24, 32);
+    line-height: 1.4;
+    @media (max-width: $breakpoint-md) {
+      line-height: 1.3;
+    }
+  }
+
+  &__text {
+    color: $whiteColor;
+    margin-bottom: 27px;
+  }
+
+  & .btn-transparent {
+
+    @media (min-width: $breakpoint-lg) {
+      margin-left: 18px;
+      & i {
+        font-size: 15px;
+        margin-right: 11px;
+
+      }
+    }
+    @media (max-width: $breakpoint-lg) {
+      margin-left: 13px;
+      font-size: 12px;
+      padding: 10px 11px 9px 11px;
+      & i {
+        font-size: 9px;
+        margin-right: 7px;
+
+      }
+    }
+  }
+
+  &__icon {
+    & img {
+      object-position: center;
+    }
+
+    @media (max-width: $breakpoint-md) {
+
+    }
+  }
+}
+
+.home-mission {
+  padding: 63px 0 123px 0;
+  background: #F6F6F6;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 63px 0 123px 0;
+  }
+  @media (max-width: $breakpoint-md) {
+    padding: 36px 0;
+  }
+}
+
+.home-about {
+
+  background: $whiteColor;
+  @media (min-width: $breakpoint-md) {
+    padding: 60px 0;
+  }
+  @media (max-width: $breakpoint-md) {
+    padding: 30px 0 22px 0;
+  }
+
+  &__column {
+    &:nth-child(1) {
+      @media (max-width: $breakpoint-md) {
+        position: relative;
+        order: 2;
+        display: grid;
+      }
+    }
+  }
+
+  & .section-text {
+    @media (min-width: $breakpoint-md) {
+      padding: 0 0 30px 0;
+    }
+    @media (max-width: $breakpoint-md) {
+      padding: 0 0 22px 0;
+    }
+  }
+
+  &__figure {
+    z-index: 2;
+    position: relative;
+
+    @media (min-width: $breakpoint-md) {
+      margin-bottom: 20px;
+    }
+    @media (max-width: $breakpoint-md) {
+      height: 211px;
+      margin-top: 96px;
+    }
+
+    img {
+
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    object-position: right;
+    z-index: 1;
+    @media (min-width: $breakpoint-md) {
+      width: 42%;
+      height: 100%;
+      bottom: 0;
+    }
+    @media (max-width: $breakpoint-md) {
+      right: 0;
+      width: calc(100% + 32px);
+      margin-left: -16px;
+      margin-right: -16px;
+      max-width: calc(100% + 32px);
+      height: calc(100% - 54px);
+    }
+  }
+
+  &__btn {
+    @media (max-width: $breakpoint-md) {
+      background: transparent;
+      color: $primaryColor;
+      border: 1px solid $primaryColor;
+      margin-bottom: 37px;
+    }
+  }
+}
+
+
+.home-news {
+  padding: 131px 0;
+  background: #F6F6F6;
+  @media (max-width: $breakpoint-md) {
+    padding: 39px 0 31px 0;
+  }
+
+  &__text {
+    margin-bottom: 34px;
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 13px;
+    }
+  }
+
+
+  &__more {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: none;
+    color: #006EB7;
+    position: relative;
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+    @media (min-width: $breakpoint-md) {
+
+    }
+
+    &:after {
+      content: '';
+      height: 1px;
+      width: calc(100% - 23px);
+      background: #006EB7;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+    }
+
+    & i {
+      @include fontSize(10, 12);
+      margin-left: 11px;
+    }
+
+    @media (max-width: $breakpoint-md) {
+
+    }
+  }
+
+  & .btn-transparent {
+    border-color: #006EB7;
+    color: #006EB7;
+    @media (min-width: $breakpoint-md) {
+      display: none;
+
+    }
+    @media (max-width: $breakpoint-md) {
+      margin: 31px auto 0 auto;
+      display: block;
+      max-width: 150px;
+      padding: 15px 22px 13px 22px;
+      & i {
+        font-size: 10px;
+        margin-left: 8px;
+      }
+    }
+  }
+}
+

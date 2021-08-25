@@ -1,0 +1,221 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  background-color: transparent;
+}
+
+input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: -internal-light-dark(black, white) !important;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  -webkit-border-radius: 0;
+}
+
+input, button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.form {
+  &__title {
+    color: $accentColor;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  &-control {
+    margin-bottom: 24px;
+    position: relative;
+
+    &__label, &__input, &__textarea {
+      @include fontSize(14, 16);
+      line-height: 1.5;
+      font-weight: 400;
+      font-family: Mont, sans-serif;
+      cursor: pointer;
+
+      display: block;
+      width: 100%;
+    }
+
+    &__input, &__textarea {
+      color: #333333;
+      background: $whiteColor;
+      border: none;
+      box-shadow: 0 0 0 1px #D8D8D8;
+      border-radius: 4px;
+      padding: 10px 15px 11px 15px;
+      resize: none;
+      @include transition(0.3);
+
+      &:focus, &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px #006EB7;
+      }
+    }
+
+    &__label {
+
+      margin-bottom: 5px;
+    }
+
+
+    &__textarea {
+      display: block;
+    }
+
+    &__input {
+      // max-width: 250px;
+    }
+
+
+    &__btn {
+      max-width: 220px;
+      @media (max-width: $breakpoint-md) {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+
+::-webkit-input-placeholder {
+  font-weight: 400;
+  @include fontSize(12, 16);
+  line-height: 1.5;
+  color: #A4B1D1;
+  font-family: Mont, sans-serif;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+::-moz-placeholder {
+  font-weight: 400;
+  @include fontSize(12, 16);
+  line-height: 1.5;
+  color: #A4B1D1;
+  font-family: Mont, sans-serif;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+:-ms-input-placeholder {
+  font-weight: 400;
+  @include fontSize(12, 16);
+  line-height: 1.5;
+  color: #A4B1D1;
+  font-family: Mont, sans-serif;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+:focus:-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+div.wpcf7 .ajax-loader {
+  display: none !important;
+}
+
+
+.wpcf7-response-output {
+  color: #757575;
+}
+
+.contacts-form {
+
+
+  @media (min-width: $breakpoint-md) {
+    padding: 4% 8%;
+    background: #F6F6F6;
+  }
+  @media (max-width: $breakpoint-md) {
+    position: relative;
+    padding: 23px 0 46px 0;
+    &:after {
+      content: '';
+      background: #F6F6F6;
+      width: calc(100% + 32px);
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: -16px;
+      z-index: -1;
+    }
+  }
+
+  &__title {
+    @include fontSize(20, 24);
+    line-height: 1.5;
+
+    @media (min-width: $breakpoint-md) {
+      margin-bottom: 13px;
+    }
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__description {
+    @media (min-width: $breakpoint-md) {
+      margin-bottom: 45px;
+    }
+    @media (max-width: $breakpoint-md) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .form {
+    &-control {
+      margin-bottom: 20px;
+
+      &__btn {
+        margin-top: 8px;
+      }
+    }
+  }
+}
